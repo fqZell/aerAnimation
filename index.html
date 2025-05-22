@@ -29,6 +29,7 @@
             height: 100vh;
             z-index: 999;
             transition: all 0.5s ease-in-out;
+            opacity: 1;
         }
 
         .start-overlay__icons {
@@ -67,7 +68,8 @@
 
         setTimeout(() => {
             // overlayEl.style.width = '0';
-            overlayEl.style.height = '0';
+            overlayEl.style.opacity = '0';
+            overlayEl.style.zIndex = '-1';
             iconsEl.style.display = 'none';
         }, 3000);
 
