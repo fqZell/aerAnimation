@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="start-overlay">
+
+        <div class="start-overlay__icons">
+            <img src="./404.svg" alt="">
+        </div>
+
+    </div>
+    
+    <img class="banner" src="./1920.jpg" alt="">
+
+    <style>
+
+        .start-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.90);
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .start-overlay__icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+            transition: all 0.3s ease-in-out;
+        }
+
+        .start-overlay__icons img {
+            animation: rotateClockwise 2s linear infinite;
+        }
+
+        @keyframes rotateClockwise {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg);
+        }
+        }
+
+        .banner {
+            width: 100vw;
+            height: 100vh;
+        }
+
+    </style>
+
+    <script>
+
+        const overlayEl = document.querySelector('.start-overlay');
+        const iconsEl = document.querySelector('.start-overlay__icons');
+
+        setTimeout(() => {
+            // overlayEl.style.width = '0';
+            overlayEl.style.height = '0';
+            iconsEl.style.display = 'none';
+        }, 3000);
+
+    </script>
+
+</body>
+</html>
